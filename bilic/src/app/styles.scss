@@ -1,0 +1,28 @@
+// Ana dosyaya eklenecek genel tema renkleri
+:root {
+  --primary: #1a237e; // Koyu lacivert
+  --primary-light: #283593; // Biraz daha açık lacivert
+  --primary-dark: #0d1b5e; // Çok koyu lacivert
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  
+  &:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+  }
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.badge.bg-primary {
+  background-color: var(--primary-light) !important;
+} 

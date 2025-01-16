@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <!-- Logo/Ana Sayfa Linki -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/">
+      <i class="bi bi-book-half me-2"></i>
+      <span class="brand-text">Tatlı Sözlük</span>
+    </a>
+
+    <!-- Mobil Menü Butonu -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menü İçeriği -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/soru-ekle" routerLinkActive="active">
+            Soru Sor
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sağ Taraf - Kullanıcı Menüsü -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/giris" routerLinkActive="active">
+            <i class="bi bi-person-circle"></i> Giriş Yap
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> 

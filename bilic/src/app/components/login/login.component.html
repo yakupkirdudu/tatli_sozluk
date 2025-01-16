@@ -1,0 +1,49 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Giriş Yap</h3>
+          
+          <form (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="email" class="form-label">E-posta</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email"
+                [(ngModel)]="loginData.email"
+                name="email"
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Şifre</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                id="password"
+                [(ngModel)]="loginData.password"
+                name="password"
+                required>
+            </div>
+
+            <button 
+              type="submit" 
+              class="btn btn-primary w-100"
+              [disabled]="!loginData.email || !loginData.password">
+              Giriş Yap
+            </button>
+
+            <div class="text-center mt-3">
+              <small class="text-muted">
+                Hesabınız yok mu? 
+                <a routerLink="/kayit" class="text-primary">Kayıt Ol</a>
+              </small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

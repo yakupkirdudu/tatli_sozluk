@@ -1,0 +1,88 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title mb-4">Yeni Soru Sor</h2>
+
+      <form (ngSubmit)="submitQuestion()">
+        <!-- Başlık -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Soru Başlığı</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="title"
+            [(ngModel)]="question.title"
+            name="title"
+            placeholder="Sorunuzu kısaca özetleyen bir başlık yazın"
+            required>
+        </div>
+
+        <!-- Açıklama -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Soru Detayı</label>
+          <textarea 
+            class="form-control" 
+            id="description"
+            [(ngModel)]="question.description"
+            name="description"
+            rows="5"
+            placeholder="Sorunuzu detaylı bir şekilde açıklayın"
+            required></textarea>
+        </div>
+
+        <!-- Kategori -->
+        <div class="mb-4">
+          <label for="category" class="form-label">Kategori</label>
+          <select 
+            class="form-control"
+            id="category"
+            [(ngModel)]="question.category"
+            name="category"
+            required>
+            <option value="">Kategori Seçin</option>
+            <option *ngFor="let category of categories" [value]="category">
+              {{category}}
+            </option>
+          </select>
+        </div>
+
+        <!-- Fotoğraf Yükleme -->
+        <div class="mb-4">
+          <label for="image" class="form-label">Fotoğraf (Opsiyonel)</label>
+          <input 
+            type="file" 
+            class="form-control" 
+            id="image"
+            accept="image/*"
+            (change)="onImageSelected($event)">
+          
+          <!-- Önizleme -->
+          <div *ngIf="imagePreview" class="mt-2">
+            <img [src]="imagePreview" class="img-thumbnail" style="max-height: 200px">
+            <button 
+              class="btn btn-sm btn-danger ms-2" 
+              (click)="removeImage()">
+              <i class="bi bi-trash"></i> Fotoğrafı Kaldır
+            </button>
+          </div>
+        </div>
+
+        <!-- Butonlar -->
+        <div class="d-flex gap-2">
+          <button 
+            type="submit" 
+            class="btn btn-primary"
+            [disabled]="!isFormValid()">
+            Soruyu Gönder
+          </button>
+          <button 
+            type="button" 
+            class="btn btn-secondary"
+            routerLink="/">
+            İptal
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> 
